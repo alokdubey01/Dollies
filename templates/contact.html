@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %} 
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" title="" type="" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+<script src="https://use.fontawesome.com/releases/v5.15.2/js/all.js" data-auto-replace-svg="nest"></script>
+    <title>Dollies</title>
+  </head>
+  <body>
+    <nav>
+        <ul class="mobile">
+    <img src="{% static "images/logo.png" %}" alt="logo" height="212px"/>
+   <div class="dropdown">
+  <div class="menu-wrap">
+    <input type="checkbox" class="toggler">
+    <div class="hamburger"><div></div></div>
+    <div class="menu">
+      <div>
+        <div>
+          <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+    
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+      </ul>
+          <ul class="pc">
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'about' %}">About Us</a></li>
+      <li><a href="{% url 'contact' %}">Contact Us</a></li>
+  
+      <li><a href="{% url 'register' %}">Register</a></li>
+    </ul>
+    </nav>
+    <div class="page-header">
+      <h1>Contact Us</h1>
+      <ul>
+        <li><a style="color:#4d4ae8" href="{% url 'home' %}">Home</a></li>/<li><a style="color:#4d4ae8"href="{% url 'contact' %}">Contact us</a></li>
+      </ul>
+    </div>
+    <div class="h1">
+<h1>Get in Touch</h1>
+</div>
+<form class="form"action="" method="get" accept-charset="utf-8">
+  <label for="Name">Name</label><br>
+  <input type="text" name="name" id="name" value="" placeholder="Name"/><br>
+  <label for="email">Email</label><br>
+  <input type="email" name="email" id="email" value="" placeholder="Email"/><br>
+  <label for="textarea">Massage</label><br>
+<textarea name="content" id="textarea" rows="2" cols="22"placeholder="Write some positive..."></textarea><br>
+<input type="submit"class="submit" name="" id="submit" value="Submit" />
+</form> 
+<div class="footer_blog">
+  <div id="button"></div>
+<div id="container">
+<div id="cont">
+<div class="footer_center">
+     <h3>Dollies</h3>
+             <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="row">
+                            <div class="col-md-6">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="footer-link">
+                                    <h2>Quick Links</h2>
+                                    <a href=""><i class="fas fa-angle-right"></i>Terms of use</a>
+                                    <a href="{% url 'privacy' %}"><i class="fas fa-angle-right"></i>Privacy policy</a>
+                                    <a href=""><i class="fas fa-angle-right"></i>Cookies</a>
+                                    <a href=""><i class="fas fa-angle-right"></i>Help</a>
+                                    <a href=""><i class="fas fa-angle-right"></i>FQAs</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container copyright">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; <a href="{% url 'home' %}">Dollies</a>, All Right Reserved.</p>
+                    </div>
+                  <!--  <div class="col-md-6">
+                        <p>Designed By <a href="https://alokdubey.com"></a></p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+   
+</div>
+</div>
+</div>
+</div>
+    <script>
+      $(document).ready(function(){
+        $(".dropbtn").click(function(){
+          $(".dropdown-content").show();
+        });
+        $(".cancle").click(function(){
+          $(".dropdown-content").hide();
+        });
+      });
+      
+    </script>
+    <script src="{% static 'script.js' %}" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

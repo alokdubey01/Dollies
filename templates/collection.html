@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %} 
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="theme-color" content="yellow">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" title="" type="" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+<script src="https://use.fontawesome.com/releases/v5.15.2/js/all.js" data-auto-replace-svg="nest"></script>
+    <title>Dollies</title>
+  </head>
+  <body>
+    <nav>
+        <ul class="mobile">
+    <img src="{% static "images/logo.png" %}" alt="logo" height="212px"/>
+   <div class="dropdown">
+  <div class="menu-wrap">
+    <input type="checkbox" class="toggler">
+    <div class="hamburger"><div></div></div>
+    <div class="menu">
+      <div>
+        <div>
+          <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'collection' %}">Services</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+      </ul>
+          <ul class="pc">
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'about' %}">About Us</a></li>
+      <li><a href="{% url 'contact' %}">Contact Us</a></li>
+      <li><a href="{% url 'collection' %}">Collection</a></li>
+      <li><a href="{% url 'register' %}">Register</a></li>
+    </ul>
+    </nav>
+        <div class="page-header">
+      <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>/<li><a href="{% url 'about' %}">About us</a></li>
+      </ul>
+    </div>
+    <div class="service">
+<h1>Book List</h1>
+  {% if book_list %}
+  <ul>
+    {% for book in category %}
+      <li>
+        <a href="{{ book.get_absolute_url }}">{{ book.title }}</a> ({{book.author}})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no books in the library.</p>
+  {% endif %} 
+    </div>
+    </body>
+    </html>

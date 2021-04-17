@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %} 
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <!--<meta name="theme-color" content="yellow">-->
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" title="" type="" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+<script src="https://use.fontawesome.com/releases/v5.15.2/js/all.js" data-auto-replace-svg="nest"></script>
+    <title>Dollies</title>
+  </head>
+  <body>
+    <nav>
+        <ul class="mobile">
+    <img src="{% static "images/logo.png" %}" alt="logo" height="212px"/>
+   <div class="dropdown">
+  <div class="menu-wrap">
+    <input type="checkbox" class="toggler">
+    <div class="hamburger"><div></div></div>
+    <div class="menu">
+      <div>
+        <div>
+          <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About Us</a></li>
+            <li><a href="{% url 'contact' %}">Contact Us</a></li>
+            <li><a href="{% url 'register' %}">Register</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+      </ul>
+          <ul class="pc">
+      <li><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'about' %}">About Us</a></li>
+      <li><a href="{% url 'contact' %}">Contact Us</a></li>
+  
+      <li><a href="{% url 'register' %}">Register</a></li>
+    </ul>
+    </nav>
+    <div class="image">
+     <img src="{% static "images/hero-img.png" %}" alt="Data science">
+    </div>
+    <div class="container">
+     <h1>Dollies</h1>
+     <p>Dollies is a novel-reading website. It's provide free novel and play for you. You can read novels and plays and you can upload your novel on Dollies platform.</p>
+    </div>
+    
+
+ <!--   <div class="rewive">
+    <table border="1">
+      <tr>
+        <td><img height="112px" width="112px"src="{{ book.image }}" alt="" /></td>
+        <td style="width:100%"><h4>{{ book.book_name }}</h4>
+        <p>{{ book.desc }}</p>
+        <a style="color:#fa7287;"href="{{ book.document }}"><i class="fa fa-book"></i>Read e-book</a>
+        </td>
+      </tr>
+    </table>
+    </div> -->
+                    <div class="section-header text-center">
+                    <h2>Our Books</h2>
+                </div>
+        {% for book in book %}
+           <div class="service">
+            <div class="content">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-item">
+                            <div class="service-img">
+                                <img src="{{ book.image }}" alt="Image">
+                            </div>
+                            <h3>{{ book.book_name }}</h3>
+                            <p>
+                             {{ book.desc }}
+                            </p>
+                            <a class="btn" href="">Learn More</a>
+                        </div>
+                    </div>
+              </div>
+            </div>
+        </div>
+        {% endfor%}
+<div class="footer_blog">
+  <div id="button"></div>
+<div id="container">
+<div id="cont">
+<div class="footer_center">
+     <h3>Dollies</h3>
+             <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="row">
+                            <div class="col-md-6">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="footer-link">
+                                    <h2>Quick Links</h2>
+                                    <a href=""><i class="fas fa-angle-right"></i>Terms of use</a>
+                                    <a href="{% url 'privacy' %}"><i class="fas fa-angle-right"></i>Privacy policy</a>
+                                    <a href=""><i class="fas fa-angle-right"></i>Cookies</a>
+                                    <a href=""><i class="fas fa-angle-right"></i>Help</a>
+                                    <a href=""><i class="fas fa-angle-right"></i>FQAs</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container copyright">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; <a href="{% url 'home' %}">Dollies</a>, All Right Reserved.</p>
+                    </div>
+                  <!--  <div class="col-md-6">
+                        <p>Designed By <a href="https://alokdubey.com"></a></p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+   
+</div>
+</div>
+</div>
+</div>
+    <script>
+      $(document).ready(function(){
+        $(".dropbtn").click(function(){
+          $(".dropdown-content").show();
+        });
+        $(".cancle").click(function(){
+          $(".dropdown-content").hide();
+        });
+      });
+      
+    </script>
+    <script src="{% static 'script.js' %}" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>
